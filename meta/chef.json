@@ -1,0 +1,1 @@
+{ "recipes": ["git", "rtorrent", "apache2", "apache2::mod_userdir", "base_utils", "collectd"] }
