@@ -1,3 +1,11 @@
+chef-torrents
+=============
+
+Collection of Chef cookbooks for setting up a torrenting VPS. 
+
+Requires Ubuntu Hardy (8.04).
+
+
 Setting up the base system
 ==========================
 
@@ -26,7 +34,7 @@ Installing Chef
     
 
 Running Chef
-================
+=============
 
+    rake build
     sudo chef-solo -c solo.rb -j chef.json -r ./solo.tar.gz
-    tar cvzf ~/solo.tar.gz cookbooks/
