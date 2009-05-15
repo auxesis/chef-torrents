@@ -1,5 +1,5 @@
 Setting up the base system
-##########################
+==========================
 
     sudo -s
     
@@ -16,9 +16,8 @@ Setting up the base system
    
 
 Installing Chef
-###############
+===============
  
-    # chef
     aptitude install ruby ruby1.8-dev libopenssl-ruby1.8 build-essential wget
     
     aptitude install rubygems
@@ -27,8 +26,7 @@ Installing Chef
     
 
 Running Chef
-################
+================
 
-    # running
     sudo chef-solo -c solo.rb -j chef.json -r ./solo.tar.gz
     tar cvzf ~/solo.tar.gz cookbooks/
