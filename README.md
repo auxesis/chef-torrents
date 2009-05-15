@@ -5,6 +5,8 @@ Collection of Chef cookbooks for setting up a torrenting VPS.
 
 Requires Ubuntu Hardy (8.04).
 
+Sets up Apache2, rtorrent, collectd, and some base utils. 
+
 
 Setting up the base system
 ==========================
