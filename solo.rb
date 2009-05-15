@@ -1,3 +1,3 @@
-file_cache_path "/home/auxesis/chef-solo"
-cookbook_path "/home/auxesis/chef-solo/cookbooks"
+file_cache_path "/tmp/chef-solo"
+cookbook_path "/tmp/chef-solo/cookbooks"
 
