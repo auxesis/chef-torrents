@@ -1,5 +1,7 @@
+Setting up the base system
+##########################
+
     sudo -s
-    screen
     
     echo '
     deb http://us.archive.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
@@ -11,7 +13,11 @@
     aptitude update
     aptitude install screen wget language-pack-en
     wget http://holmwood.id.au/~lindsay/wakanai/config/screenrc -O .screenrc
-    
+   
+
+Installing Chef
+###############
+ 
     # chef
     aptitude install ruby ruby1.8-dev libopenssl-ruby1.8 build-essential wget
     
@@ -19,6 +25,10 @@
     gem sources -a http://gems.opscode.com
     gem install chef ohai
     
+
+Running Chef
+################
+
     # running
     sudo chef-solo -c solo.rb -j chef.json -r ./solo.tar.gz
     tar cvzf ~/solo.tar.gz cookbooks/
