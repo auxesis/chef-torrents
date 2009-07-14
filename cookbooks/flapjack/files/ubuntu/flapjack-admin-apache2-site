@@ -1,0 +1,30 @@
+<VirtualHost *>
+    ServerName monitoring.unstated.net
+    ServerAdmin lindsay@holmwood.id.au
+    
+    DocumentRoot /srv/www/flapjack-admin/root/public
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+    <Directory /srv/www/flapjack-admin/root/public>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    </Directory>
+
+    PassengerDefaultUser www-data
+  
+    # logging
+  
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+    CustomLog /srv/www/flapjack-admin/log/apache_access.log combined
+    
+    ErrorLog /srv/www/flapjack-admin/log/apache_error.log
+    
+    ServerSignature On
+  
+</VirtualHost>

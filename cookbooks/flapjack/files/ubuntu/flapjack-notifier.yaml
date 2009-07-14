@@ -1,0 +1,9 @@
+--- 
+:notifiers: 
+  :mailer: 
+    :from_address: notifications@unstated.net
+  :xmpp: 
+    :jid: flapjack-test@jabber.org
+    :password: test
+:database_uri: "sqlite3:///srv/www/flapjack-admin/root/production.db"
+:website_uri: "http://monitoring.unstated.net/"
