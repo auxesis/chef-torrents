@@ -30,12 +30,20 @@ file "#{checkout_dir}/production.db" do
   notifies :reload, resources(:service => "apache2")
 end
 
+# rubygems
+execute "redeploy gems" do 
+  cwd checkout_dir 
+  command "bin/thor merb:gem:redeploy"
+  action :nothing
+end
+
 # working with git
 execute "checkout" do
   command "git clone git://github.com/auxesis/flapjack-admin.git #{checkout_dir}"
   not_if { File.exists?(checkout_dir) }
   notifies :run, resources(:execute => "automigrate")
   notifies :reload, resources(:service => "apache2")
+  notifies :run, resources(:execute => "redeploy gems")
 end
 
 execute "pull" do 
@@ -44,6 +52,7 @@ execute "pull" do
   only_if { File.exists?(checkout_dir) }
   notifies :run, resources(:execute => "autoupgrade")
   notifies :reload, resources(:service => "apache2")
+  notifies :run, resources(:execute => "redeploy gems")
 end
 
 %w(log tmp).each do |dir|
@@ -58,11 +67,6 @@ directory "#{checkout_dir}" do
   owner "root"
   group "flapjack"
   mode  "0775"
-end
-
-execute "redeploy gems" do 
-  cwd checkout_dir 
-  command "bin/thor merb:gem:redeploy"
 end
 
 remote_file "/etc/apache2/sites-available/flapjack-admin" do 
