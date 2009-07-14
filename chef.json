@@ -1,5 +1,1 @@
-{ 
-  "recipes": [ "git", "rtorrent", 
-               "apache2", "apache2::mod_userdir", 
-               "base_utils", "collectd" ]
-}
+{ "recipes": ["base_utils", "rubygems", "rubygems::github", "ruby::dev", "sqlite3", "sqlite3::dev", "git", "rtorrent", "apache2", "apache2::mod_userdir", "apache2::passenger", "postfix", "collectd", "beanstalkd", "flapjack", "flapjack::admin"] }
