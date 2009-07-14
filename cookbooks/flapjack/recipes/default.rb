@@ -1,6 +1,6 @@
 gem_package "flapjack" do 
   package_name "auxesis-flapjack" 
-  action :install
+  action [:install, :upgrade]
 end
 
 # directories
