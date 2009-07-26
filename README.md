@@ -39,4 +39,4 @@ Running Chef
 =============
 
     rake build
-    sudo chef-solo -c solo.rb -j chef.json -r ./solo.tar.gz
+    sudo chef-solo -c solo.rb -j chef.json 
